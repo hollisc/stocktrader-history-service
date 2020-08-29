@@ -1,0 +1,14 @@
+# Source: traderlite/templates/trade-history.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: acmetrader-trade-history
+  annotations:
+    description: Route for application's http service
+    haproxy.router.openshift.io/disable_cookies: 'false'
+spec:
+
+  path: '/trade-history'
+  to:
+    kind: Service
+    name: acmetrader-trade-history-service

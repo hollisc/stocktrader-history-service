@@ -1,0 +1,16 @@
+# Source: traderlite/templates/trade-history.yaml
+#Deploy the service
+apiVersion: v1
+kind: Service
+metadata:
+  name: acmetrader-trade-history-service
+
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
+  selector:
+    app: acmetrader-trade-history
